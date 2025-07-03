@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body data-page="test">
+    
+    <!-- Copy the ENTIRE content from includes/navigation.html and paste it here -->
+    <header class="header">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/CPp3iF3YvmWBjZE0ogfg/media/685b3a80958e7f0d7584df27.svg" alt="Arber Construction Group Logo" width="50" height="50" style="border-radius:12px; background:white; object-fit:contain; display:block; padding:6px;" />
+                <div class="logo-text">
+                    <div class="logo-company">Arber Construction Group</div>
+                    <div class="logo-tagline">NYC's Renovation Experts</div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <!-- Services Dropdown -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Services
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <div class="dropdown-section">
+                                <div class="dropdown-header">Main Services</div>
+                                <a href="/kitchen-remodeling-nyc/" class="dropdown-link dropdown-featured">Kitchen Remodeling</a>
+                                <a href="/bathroom-remodeling-nyc/" class="dropdown-link dropdown-featured">Bathroom Renovation</a>
+                                <a href="/basement-remodeling-nyc/" class="dropdown-link dropdown-featured">Basement Finishing</a>
+                                <a href="/nyc-apartment-renovations/" class="dropdown-link">Complete Renovations</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Portfolio -->
+                    <li class="nav-item">
+                        <a href="/portfolio/" class="nav-link">Portfolio</a>
+                    </li>
+
+                    <!-- Contact -->
+                    <li class="nav-item">
+                        <a href="/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Emergency Contact -->
+                <div class="emergency-contact">
+                    <a href="tel:646-846-7576" class="emergency-phone">
+                        <span class="emergency-icon">📞</span>
+                        (646) 846-7576
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <!-- Services -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    Services
+                    <span class="mobile-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown">
+                    <div class="mobile-dropdown-section">
+                        <div class="mobile-dropdown-header">Main Services</div>
+                        <a href="/kitchen-remodeling-nyc/" class="mobile-dropdown-link">Kitchen Remodeling</a>
+                        <a href="/bathroom-remodeling-nyc/" class="mobile-dropdown-link">Bathroom Renovation</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div class="mobile-nav-item">
+                <a href="/portfolio/" class="mobile-nav-link">Portfolio</a>
+            </div>
+
+            <!-- Mobile CTA -->
+            <div class="mobile-cta">
+                <a href="/get-quote/" class="mobile-cta-button">Get Free Quote</a>
+                <a href="tel:646-846-7576" class="mobile-cta-button mobile-emergency">Emergency: (646) 846-7576</a>
+            </div>
+        </div>
+    </div>
+    
+    <main style="padding: 6rem 2rem 2rem 2rem;">
+        <h1>Test Page</h1>
+        <p>If the navigation appears above, extraction was successful!</p>
+        <p>Try clicking the hamburger menu on mobile or the Services dropdown on desktop.</p>
+    </main>
+    
+    <script src="js/navigation.js"></script>
+</body>
+</html>

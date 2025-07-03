@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== PAGE TITLE - REPLACE FOR EACH PAGE ===== -->
+    <title><!-- INSERT PAGE TITLE HERE --></title>
+    
+    <!-- ===== PAGE-SPECIFIC META TAGS - REPLACE FOR EACH PAGE ===== -->
+    <!-- <meta name="description" content="INSERT PAGE DESCRIPTION"> -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Global Styles - ALWAYS LOAD THESE IN THIS ORDER -->
+    <link rel="stylesheet" href="css/global-variables.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <!-- ===== PAGE-SPECIFIC CSS - ADD HERE ===== -->
+    <!-- <link rel="stylesheet" href="css/your-page-name.css"> -->
+    
+    <!-- ===== PAGE-SPECIFIC SCHEMA MARKUP - ADD HERE ===== -->
+    <!-- <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      // Add page-specific schema here
+    }
+    </script> -->
+</head>
+
+<!-- ===== BODY DATA-PAGE - SET FOR ACTIVE PAGE HIGHLIGHTING ===== -->
+<body data-page="<!-- INSERT PAGE NAME: queens, kitchen, about, etc. -->">
+
+    <!-- ===== NAVIGATION - IDENTICAL ON ALL PAGES ===== -->
+    <header class="header">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/CPp3iF3YvmWBjZE0ogfg/media/685b3a80958e7f0d7584df27.svg" alt="Arber Construction Group Logo" width="50" height="50" style="border-radius:12px; background:white; object-fit:contain; display:block; padding:6px;" />
+                <div class="logo-text">
+                    <div class="logo-company">Arber Construction Group</div>
+                    <div class="logo-tagline">NYC's Renovation Experts</div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <!-- Services Dropdown -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Services
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <div class="dropdown-section">
+                                <div class="dropdown-header">Main Services</div>
+                                <a href="/kitchen-remodeling-nyc/" class="dropdown-link dropdown-featured">Kitchen Remodeling</a>
+                                <a href="/bathroom-remodeling-nyc/" class="dropdown-link dropdown-featured">Bathroom Renovation</a>
+                                <a href="/basement-remodeling-nyc/" class="dropdown-link dropdown-featured">Basement Finishing</a>
+                                <a href="/nyc-apartment-renovations/" class="dropdown-link">Complete Renovations</a>
+                            </div>
+                            <div class="dropdown-section">
+                                <div class="dropdown-header">Specialty Services</div>
+                                <a href="/specialty-services/co-op-condo-renovations/" class="dropdown-link">Co-op & Condo</a>
+                                <a href="/specialty-services/historic-brownstone-renovation/" class="dropdown-link">Historic Brownstones</a>
+                                <a href="/specialty-services/luxury-apartment-design/" class="dropdown-link">Luxury Design</a>
+                                <a href="/specialty-services/ada-accessible-renovations/" class="dropdown-link">ADA Accessible</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Service Areas Dropdown -->
+                    <li class="nav-item">
+                        <a href="/service-areas/" class="nav-link">
+                            Service Areas
+                            <span class="nav-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <div class="dropdown-section">
+                                <div class="dropdown-header">NYC Boroughs</div>
+                                <a href="/manhattan-home-renovation/" class="dropdown-link dropdown-featured">Manhattan</a>
+                                <a href="/brooklyn-home-renovations/" class="dropdown-link dropdown-featured">Brooklyn</a>
+                                <a href="/queens-remodeling-contractors/" class="dropdown-link dropdown-featured">Queens</a>
+                                <a href="/bronx-remodeling-contractors/" class="dropdown-link">Bronx</a>
+                                <a href="/staten-island-remodeling/" class="dropdown-link">Staten Island</a>
+                            </div>
+                            <div class="dropdown-section">
+                                <div class="dropdown-header">Featured Neighborhoods</div>
+                                <a href="/queens-remodeling-contractors/astoria-renovations/" class="dropdown-link">Astoria</a>
+                                <a href="/manhattan-home-renovation/upper-east-side-renovations/" class="dropdown-link">Upper East Side</a>
+                                <a href="/brooklyn-home-renovations/park-slope-renovation/" class="dropdown-link">Park Slope</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Portfolio -->
+                    <li class="nav-item">
+                        <a href="/portfolio/" class="nav-link">Portfolio</a>
+                    </li>
+
+                    <!-- About -->
+                    <li class="nav-item">
+                        <a href="/about-arber-construction/" class="nav-link">About</a>
+                    </li>
+
+                    <!-- Blog -->
+                    <li class="nav-item">
+                        <a href="/blog/" class="nav-link">Blog</a>
+                    </li>
+
+                    <!-- Contact -->
+                    <li class="nav-item">
+                        <a href="/contact/" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Emergency Contact -->
+                <div class="emergency-contact">
+                    <a href="tel:646-846-7576" class="emergency-phone">
+                        <span class="emergency-icon">📞</span>
+                        (646) 846-7576
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <!-- Services -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    Services
+                    <span class="mobile-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown">
+                    <div class="mobile-dropdown-section">
+                        <div class="mobile-dropdown-header">Main Services</div>
+                        <a href="/kitchen-remodeling-nyc/" class="mobile-dropdown-link">Kitchen Remodeling</a>
+                        <a href="/bathroom-remodeling-nyc/" class="mobile-dropdown-link">Bathroom Renovation</a>
+                        <a href="/basement-remodeling-nyc/" class="mobile-dropdown-link">Basement Finishing</a>
+                        <a href="/nyc-apartment-renovations/" class="mobile-dropdown-link">Complete Renovations</a>
+                    </div>
+                    <div class="mobile-dropdown-section">
+                        <div class="mobile-dropdown-header">Specialty Services</div>
+                        <a href="/specialty-services/co-op-condo-renovations/" class="mobile-dropdown-link">Co-op & Condo</a>
+                        <a href="/specialty-services/historic-brownstone-renovation/" class="mobile-dropdown-link">Historic Brownstones</a>
+                        <a href="/specialty-services/luxury-apartment-design/" class="mobile-dropdown-link">Luxury Design</a>
+                        <a href="/specialty-services/ada-accessible-renovations/" class="mobile-dropdown-link">ADA Accessible</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Areas -->
+            <div class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">
+                    Service Areas
+                    <span class="mobile-arrow">▼</span>
+                </a>
+                <div class="mobile-dropdown">
+                    <div class="mobile-dropdown-section">
+                        <div class="mobile-dropdown-header">NYC Boroughs</div>
+                        <a href="/manhattan-home-renovation/" class="mobile-dropdown-link">Manhattan</a>
+                        <a href="/brooklyn-home-renovations/" class="mobile-dropdown-link">Brooklyn</a>
+                        <a href="/queens-remodeling-contractors/" class="mobile-dropdown-link">Queens</a>
+                        <a href="/bronx-remodeling-contractors/" class="mobile-dropdown-link">Bronx</a>
+                        <a href="/staten-island-remodeling/" class="mobile-dropdown-link">Staten Island</a>
+                    </div>
+                    <div class="mobile-dropdown-section">
+                        <div class="mobile-dropdown-header">Featured Neighborhoods</div>
+                        <a href="/queens-remodeling-contractors/astoria-renovations/" class="mobile-dropdown-link">Astoria</a>
+                        <a href="/manhattan-home-renovation/upper-east-side-renovations/" class="mobile-dropdown-link">Upper East Side</a>
+                        <a href="/brooklyn-home-renovations/park-slope-renovation/" class="mobile-dropdown-link">Park Slope</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div class="mobile-nav-item">
+                <a href="/portfolio/" class="mobile-nav-link">Portfolio</a>
+            </div>
+
+            <!-- About -->
+            <div class="mobile-nav-item">
+                <a href="/about-arber-construction/" class="mobile-nav-link">About</a>
+            </div>
+
+            <!-- Blog -->
+            <div class="mobile-nav-item">
+                <a href="/blog/" class="mobile-nav-link">Blog</a>
+            </div>
+
+            <!-- Contact -->
+            <div class="mobile-nav-item">
+                <a href="/contact/" class="mobile-nav-link">Contact</a>
+            </div>
+
+            <!-- Mobile CTA -->
+            <div class="mobile-cta">
+                <a href="/get-quote/" class="mobile-cta-button">Get Free Quote</a>
+                <a href="tel:646-846-7576" class="mobile-cta-button mobile-emergency">Emergency: (646) 846-7576</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT AREA - REPLACE FOR EACH PAGE ===== -->
+    <main>
+        <!-- 
+        ================================================
+        INSERT YOUR PAGE-SPECIFIC CONTENT HERE
+        ================================================
+        
+        Examples:
+        - Hero sections
+        - Service descriptions  
+        - Contact forms
+        - Portfolio galleries
+        - etc.
+        
+        ================================================
+        -->
+        
+        <!-- EXAMPLE CONTENT - REMOVE AND REPLACE -->
+        <section class="section-hero">
+            <div class="container">
+                <h1>Page Title Goes Here</h1>
+                <p>Replace this entire main section with your page-specific content.</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- ===== FOOTER - IDENTICAL ON ALL PAGES ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">
+                    <img src="https://storage.googleapis.com/msgsndr/CPp3iF3YvmWBjZE0ogfg/media/685b3a80958e7f0d7584df27.svg" alt="Arber Construction Group Logo" width="48" height="48" />
+                    <span class="footer-company">Arber Construction Group</span>
+                </a>
+                <p class="footer-tagline">Queens' Premier Remodeling Contractors</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/about-arber-construction/">About</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/kitchen-remodeling-nyc/">Kitchen Remodeling</a></li>
+                        <li><a href="/bathroom-remodeling-nyc/">Bathroom Renovation</a></li>
+                        <li><a href="/basement-remodeling-nyc/">Basement Finishing</a></li>
+                        <li><a href="/nyc-apartment-renovations/">Complete Renovations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><span>📍</span> 209-15 18th Ave, Bayside, NY 11360</li>
+                        <li><span>📞</span> <a href="tel:646-846-7576">(646) 846-7576</a></li>
+                        <li><span>✉️</span> <a href="mailto:info@arberconstruction.com">info@arberconstruction.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Arber Construction Group. All rights reserved.</span>
+            <span><a href="https://a810-bisweb.nyc.gov/bisweb/LicenseQueryServlet?licensetype=G&licno=626826&requestid=1" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Licensed & Insured</a> • EPA Lead-Safe • Queens Chamber Member</span>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT - IDENTICAL ON ALL PAGES ===== -->
+    <script src="js/navigation.js"></script>
+    
+    <!-- ===== PAGE-SPECIFIC JAVASCRIPT - ADD HERE ===== -->
+    <!-- <script src="js/your-page-name.js"></script> -->
+
+</body>
+</html>

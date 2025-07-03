@@ -1,0 +1,318 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User Authentication
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  role          UserRole  @default(CLIENT)
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  accounts Account[]
+  sessions Session[]
+  projects Project[]
+  leads    Lead[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// Lead Management
+model Lead {
+  id            String     @id @default(cuid())
+  firstName     String
+  lastName      String?
+  email         String
+  phone         String?
+  message       String?
+  status        LeadStatus @default(NEW)
+  source        String?    // Form page where lead came from
+  score         Int        @default(0)
+  budget        String?
+  timeline      String?
+  propertyType  String?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  // Relations
+  userId       String?
+  user         User?      @relation(fields: [userId], references: [id])
+  serviceId    String?
+  service      Service?   @relation(fields: [serviceId], references: [id])
+  boroughId    String?
+  borough      Borough?   @relation(fields: [boroughId], references: [id])
+  followUps    FollowUp[]
+  quotes       Quote[]
+
+  @@map("leads")
+}
+
+model FollowUp {
+  id        String   @id @default(cuid())
+  leadId    String
+  type      String   // email, call, meeting
+  message   String?
+  scheduled DateTime
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@map("follow_ups")
+}
+
+// Quote Management
+model Quote {
+  id          String      @id @default(cuid())
+  leadId      String
+  amount      Decimal?
+  description String?
+  status      QuoteStatus @default(DRAFT)
+  validUntil  DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  lead  Lead         @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  items QuoteItem[]
+
+  @@map("quotes")
+}
+
+model QuoteItem {
+  id          String  @id @default(cuid())
+  quoteId     String
+  description String
+  quantity    Int     @default(1)
+  unitPrice   Decimal
+  total       Decimal
+
+  quote Quote @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+
+  @@map("quote_items")
+}
+
+// Project Portfolio
+model Project {
+  id            String        @id @default(cuid())
+  title         String
+  description   String?
+  beforeImages  String[]      // Array of image URLs
+  afterImages   String[]      // Array of image URLs
+  budget        String?
+  timeline      String?
+  completed     Boolean       @default(false)
+  featured      Boolean       @default(false)
+  status        ProjectStatus @default(COMPLETED)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  // Relations
+  userId       String?
+  user         User?        @relation(fields: [userId], references: [id])
+  serviceId    String
+  service      Service      @relation(fields: [serviceId], references: [id])
+  boroughId    String?
+  borough      Borough?     @relation(fields: [boroughId], references: [id])
+  testimonials Testimonial[]
+  images       ProjectImage[]
+
+  @@map("projects")
+}
+
+model ProjectImage {
+  id        String  @id @default(cuid())
+  projectId String
+  url       String
+  caption   String?
+  isBefore  Boolean @default(false)
+  isAfter   Boolean @default(false)
+  isFeatured Boolean @default(false)
+  order     Int     @default(0)
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@map("project_images")
+}
+
+// Services
+model Service {
+  id          String @id @default(cuid())
+  name        String @unique
+  slug        String @unique
+  description String?
+  basePrice   String?
+  isActive    Boolean @default(true)
+  order       Int     @default(0)
+
+  // Relations
+  projects Project[]
+  leads    Lead[]
+
+  @@map("services")
+}
+
+// NYC Boroughs and Neighborhoods
+model Borough {
+  id   String @id @default(cuid())
+  name String @unique
+  slug String @unique
+
+  // Relations
+  neighborhoods Neighborhood[]
+  projects      Project[]
+  leads         Lead[]
+
+  @@map("boroughs")
+}
+
+model Neighborhood {
+  id        String @id @default(cuid())
+  name      String
+  slug      String
+  boroughId String
+
+  borough Borough @relation(fields: [boroughId], references: [id], onDelete: Cascade)
+
+  @@unique([slug, boroughId])
+  @@map("neighborhoods")
+}
+
+// Testimonials
+model Testimonial {
+  id        String  @id @default(cuid())
+  name      String
+  location  String?
+  content   String
+  rating    Int     @default(5)
+  featured  Boolean @default(false)
+  approved  Boolean @default(false)
+  createdAt DateTime @default(now())
+
+  // Relations
+  projectId String?
+  project   Project? @relation(fields: [projectId], references: [id])
+
+  @@map("testimonials")
+}
+
+// Contact Form Submissions (separate from leads for simple contact)
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  source    String?  // Which page/form
+  responded Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_submissions")
+}
+
+// Blog/Resources (for future content marketing)
+model BlogPost {
+  id          String      @id @default(cuid())
+  title       String
+  slug        String      @unique
+  content     String?
+  excerpt     String?
+  published   Boolean     @default(false)
+  featured    Boolean     @default(false)
+  status      BlogStatus  @default(DRAFT)
+  publishedAt DateTime?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@map("blog_posts")
+}
+
+// Enums
+enum UserRole {
+  CLIENT
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  QUOTED
+  CONVERTED
+  LOST
+}
+
+enum QuoteStatus {
+  DRAFT
+  SENT
+  ACCEPTED
+  REJECTED
+  EXPIRED
+}
+
+enum ProjectStatus {
+  PLANNING
+  IN_PROGRESS
+  COMPLETED
+  ON_HOLD
+}
+
+enum BlogStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+} 

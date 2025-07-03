@@ -1,0 +1,109 @@
+# ==========================================================================
+# CURSOR AI CONSISTENCY RULES - ARBER CONSTRUCTION GROUP
+# Navigation & Design System Consistency Guidelines
+# ==========================================================================
+
+# NAVIGATION CONSISTENCY RULES
+- Always use the same navigation HTML structure across all pages
+- Use CSS variables from global-variables.css for consistent colors, fonts, and spacing
+- Maintain responsive design with mobile-first approach
+- Keep navigation JavaScript functionality identical across all pages
+- Use semantic HTML with proper ARIA labels for accessibility
+- Ensure consistent hover and active states throughout navigation
+- Follow the established class naming convention from navigation.css
+
+# CSS & DESIGN SYSTEM RULES
+- Always import global-variables.css before any other stylesheets
+- Use CSS variables defined in global-variables.css instead of hardcoded values
+- Follow Arber Construction Group brand colors: 
+  * Primary Blue: #233063 (var(--primary-blue))
+  * Primary Yellow: #F4B81D (var(--primary-yellow))
+  * Use established color variations (light-blue, dark-blue, etc.)
+- Maintain consistent typography using Inter font family
+- Use established spacing variables (--spacing-xs through --spacing-xxl)
+- Apply consistent border-radius and box-shadow patterns
+
+# CODE ORGANIZATION RULES
+- Extract common navigation, footer, and shared components into separate files
+- Use consistent file naming: kebab-case for files, camelCase for JS variables
+- Comment complex functionality clearly
+- Maintain consistent indentation (2 spaces)
+- Keep page-specific styles in separate CSS files
+- Import navigation.css and footer.css on every page
+
+# HTML STRUCTURE RULES
+- Always include proper document structure with semantic HTML5 elements
+- Use consistent meta tags and viewport settings
+- Include navigation.html and footer.html on every page
+- Add data-page attribute to body for active page highlighting
+- Maintain consistent heading hierarchy (h1, h2, h3, etc.)
+- Include proper alt text for all images
+- Use consistent class naming patterns
+
+# JAVASCRIPT FUNCTIONALITY RULES
+- Include navigation.js on every page for consistent menu behavior
+- Maintain identical mobile menu toggle functionality
+- Use consistent event listeners and function naming
+- Follow established dropdown toggle patterns
+- Include smooth scrolling for anchor links
+- Maintain consistent active page highlighting logic
+
+# RESPONSIVE DESIGN RULES
+- Mobile-first approach using established breakpoints:
+  * Mobile: max-width: 768px
+  * Tablet: max-width: 900px  
+  * Desktop: min-width: 1200px
+- Use CSS Grid and Flexbox for layouts
+- Maintain navigation consistency across all screen sizes
+- Test mobile menu functionality on all pages
+- Ensure touch-friendly button sizes (minimum 44px)
+
+# ACCESSIBILITY REQUIREMENTS
+- Include proper ARIA labels on navigation elements
+- Maintain sufficient color contrast ratios
+- Support keyboard navigation throughout
+- Include focus indicators for interactive elements
+- Use semantic HTML elements appropriately
+- Provide alternative text for images and icons
+
+# CONTENT CONSISTENCY RULES
+- Use consistent tone and voice throughout
+- Maintain brand messaging about Queens specialization
+- Include consistent contact information (646) 846-7576
+- Use established service areas and specialties
+- Maintain consistent call-to-action language
+- Include proper schema markup for SEO
+
+# PERFORMANCE RULES
+- Optimize images for web delivery
+- Minimize CSS and JavaScript where possible
+- Use efficient selectors in CSS
+- Avoid inline styles where CSS classes exist
+- Optimize font loading with font-display: swap
+- Minimize HTTP requests for assets
+
+# QUALITY ASSURANCE CHECKLIST
+Before deploying any page, verify:
+- Navigation structure matches navigation.html exactly
+- All CSS variables are used consistently
+- Mobile menu functions properly
+- Active page highlighting works
+- Footer structure matches footer.html exactly
+- Responsive design works on all breakpoints
+- All links function correctly
+- Contact information is consistent
+
+# WHEN MAKING CHANGES
+- Update the component files (navigation.html, navigation.css, etc.) rather than individual pages
+- Test changes across multiple pages to ensure consistency
+- Maintain backwards compatibility when updating shared components
+- Document any new CSS variables in global-variables.css
+- Update this .cursorrules file if new patterns are established
+
+# ARBER CONSTRUCTION GROUP BRAND GUIDELINES
+- Always emphasize Queens specialization and local expertise
+- Highlight 200+ completed Queens renovations
+- Include licensing information: Licensed & Insured, EPA Lead-Safe
+- Maintain professional yet approachable tone
+- Focus on ROI and investment value for customers
+- Use neighborhood-specific expertise as differentiator

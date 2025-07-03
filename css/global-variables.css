@@ -1,0 +1,94 @@
+/* ==========================================================================
+   GLOBAL CSS VARIABLES - ARBER CONSTRUCTION GROUP DESIGN SYSTEM
+   Brand Colors: Blue #233063, Yellow #F4B81D
+   ========================================================================== */
+
+   :root {
+    /* Primary Brand Colors */
+    --primary-blue: #233063;
+    --primary-yellow: #F4B81D;
+    --light-blue: #e8ecf5;
+    --medium-blue: #5a6b9a;
+    --dark-blue: #1a2549;
+    --light-yellow: #f7c547;
+    
+    /* Text Colors */
+    --text-dark: #233063;
+    --text-medium: #5a6b9a;
+    --text-light: #788cb4;
+    
+    /* Background Colors */
+    --background-light: #f8faff;
+    --white: #ffffff;
+    
+    /* Utility Colors */
+    --border-light: rgba(35, 48, 99, 0.15);
+    --shadow: rgba(35, 48, 99, 0.15);
+    
+    /* Typography */
+    --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-base: 16px;
+    --font-size-lg: 1.125rem;
+    --font-size-sm: 0.875rem;
+    --line-height-base: 1.6;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --box-shadow: 0 2px 4px rgba(35, 48, 99, 0.1);
+    --box-shadow-lg: 0 4px 20px rgba(35, 48, 99, 0.15);
+    --box-shadow-xl: 0 8px 30px rgba(35, 48, 99, 0.15);
+    --transition: all 0.3s ease;
+    
+    /* Navigation specific variables */
+    --nav-height: 80px;
+    --nav-height-mobile: 70px;
+    --nav-bg: var(--white);
+    --nav-text: var(--text-dark);
+    --nav-hover: var(--primary-blue);
+    --nav-active: #0056b3;
+    --nav-shadow: 0 2px 20px rgba(35, 48, 99, 0.1);
+    
+    /* Button Variables */
+    --btn-padding: 1rem 2rem;
+    --btn-padding-lg: 1.25rem 2.5rem;
+    --btn-border-radius: 8px;
+    --btn-font-weight: 700;
+    --btn-transition: all 0.3s ease;
+    
+    /* Form Variables */
+    --input-border: 1px solid var(--border-light);
+    --input-border-focus: 2px solid var(--primary-blue);
+    --input-padding: 0.75rem 1rem;
+    --input-border-radius: 6px;
+    
+    /* Section Variables */
+    --section-padding: 4rem 0;
+    --section-padding-lg: 6rem 0;
+    --section-padding-mobile: 2.5rem 0;
+    
+    /* Hero Section Variables */
+    --hero-padding: 3rem 0 5rem 0;
+    --hero-bg: linear-gradient(135deg, var(--light-blue) 0%, #f2f5fb 50%, var(--background-light) 100%);
+    
+    /* Card Variables */
+    --card-padding: 2rem;
+    --card-border-radius: 12px;
+    --card-shadow: 0 4px 20px var(--shadow);
+    --card-border: 4px solid var(--primary-yellow);
+    
+    /* Responsive Breakpoints */
+    --mobile-breakpoint: 768px;
+    --tablet-breakpoint: 900px;
+    --desktop-breakpoint: 1200px;
+}
